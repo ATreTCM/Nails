@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}{{ analM.name }}{% endblock %}
+{% block content %}
+    <h1>{{ analM.name }}</h1>
+    <div class="date" >Зарплата за {{ analM.month }} месяц составляет {{ analM.pay_for_month }}
+    </div>
+    <div class="date" >Среднемесячная зарплата составляет {{ analM.medium_pay }}
+    </div>
+{% endblock %}

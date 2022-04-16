@@ -1,0 +1,51 @@
+{% load bootstrap4 %}
+
+{% load static %}
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>{% block title %} Главная {% endblock %} - Amex</title>
+        {% bootstrap_css %}
+        <link rel="stylesheet" type="text/css"
+        href="{% static 'main/style.css' %}">
+        {% bootstrap_javascript jquery='slim' %}
+    </head>
+    <body class="container-fluid">
+        <header class="mb-4">
+            <h1 class="display-2 text-center">AMEX</h1>
+        </header>
+        <div class="row">
+            <ul class="col nav justify-content-end border">
+                {% if user.is_authenticated %}
+                <li class="nav-item"><a class="nav-link"
+                href="{% url 'logout' %}">Выйти</a></li>
+                {% else %}
+                <li class="nav-item"><a class="nav-link"
+                href="{% url 'login' %}">Bxoд</a></li>
+                <li class="nav-item"><a class="nav-link"
+                href="{% url 'register' %}">Регистрация</a></li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="row">
+            <nav class="col-md-auto nav flex-column border">
+                <a class="nav-link root"
+                href="{% url 'dashboard' %}">Главная</a>
+                <a class="nav-link" href="{% url 'paymate:create' %}">Ввести данные</a>
+                <a class="nav-link" href="{% url 'paymate:list' %}">Мои данные</a>
+                <a class="nav-link" href="{% url 'paymate:staticM' %}">Статистика работы по месяцам</a>
+                <a class="nav-link" href="{% url 'paymate:staticY' %}">Статистика работы по годам</a>
+            </nav>
+            <section class="col border ру-2">
+                {% bootstrap_messages %}
+                {% block content %}
+                {% endblock %}
+            </section>
+        </div>
+        <footer class="mt-3">
+            <p class="text-right font-italic">&copy; by ATreT</p>
+        </footer>
+    </body>
+</html>

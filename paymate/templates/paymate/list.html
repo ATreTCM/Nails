@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Личный кабинет{% endblock %}
+{%block content %}
+    <h1>Привет {{ request.user }}</h1>
+    {% for value in nails_values %}
+        {% if request.user == value.name %}
+            <h2>
+                <a href="{{ value.get_absolute_url }}">{{ value.date }}</a>
+            </h2>
+            <p class="date"> Дата {{ value.date }} работник {{ value.name }}</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %} 

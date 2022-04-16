@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}{{ from_name.name }}{% endblock %}
+{% block content %}
+    <h1>{{ from_name.name }}</h1>
+    <div class="date" >Зарплата за {{ from_name.date }} составляет {{ from_name.pay_for_day }} к-во гвоздя {{ from_name.nails_for_day }}
+        <a href='{% url "paymate:update" from_name.pk %}'>Изменить</a>
+        <a href='{% url "paymate:pay_delete" from_name.pk %}'>Удалить</a
+    </div>
+{% endblock %} 
