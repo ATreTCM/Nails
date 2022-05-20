@@ -75,7 +75,7 @@ def analytic_year(request):
     """Сохранение данных за год"""
     values, analytic_bd_y, name, date = take_useful_value(request, Analytic_year)
     analytic_bd_y.pay_for_year = pay_sum(name, values, 'year')
-    analytic_bd_y.medium_pay = pay_sum(name, values, 'year')
+    analytic_bd_y.medium_pay = pay_sum(name, values, 'year')/12
     analytic_bd_y.name = name
     analytic_bd_y.year = date.year
     analytic_bd_y.save()
