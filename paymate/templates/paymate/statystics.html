@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
-{% block title %}{{ analM.name }}{% endblock %}
+{% block title %}{{ analytic_bd.name }}{% endblock %}
 {% block content %}
-    <h1>{{ analM.name }}</h1>
-    <div class="date" >Зарплата за {{ analM.month }} месяц составляет {{ analM.pay_for_month }}
+    <h1>{{ analytic_bd.name }}</h1>
+    <div class="date" >Зарплата за {{ analytic_bd.month }} месяц составляет {{ analytic_bd.pay_for_month }}
     </div>
-    <div class="date" >Среднемесячная зарплата составляет {{ analM.medium_pay }}
+    <div class="date" >Среднемесячная зарплата составляет {{ analytic_bd.medium_pay }}
     </div>
 {% endblock %}

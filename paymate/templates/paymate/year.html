@@ -2,9 +2,9 @@
 
 {% block title %}{{ from_name.name }}{% endblock %}
 {% block content %}
-    <h1>{{ analY.name }}</h1>
-        <div class="date" >Зарплата за {{ analY.year }} год составляет {{ analY.pay_for_year }}
+    <h1>{{ analytic_bd_y.name }}</h1>
+        <div class="date" >Зарплата за {{ analytic_bd_y.year }} год составляет {{ analytic_bd_y.pay_for_year }}
         </div>
-        <div class="date" >Среднегодовая зарплата составляет {{ analY.medium_pay }}
+        <div class="date" >Среднегодовая зарплата составляет {{ analytic_bd_y.medium_pay }}
         </div>
 {% endblock %}
